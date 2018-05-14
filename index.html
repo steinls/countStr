@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+	<style>
+		input,textarea{
+			background: none;
+			border: none;
+			outline: none;
+			margin: 0;
+			padding: 0;
+		}
+		textarea{
+			resize:none;
+		}
+		.content{
+			width: 400px;
+			margin:100px auto;
+		}
+		.k{
+			margin:10px;
+			position: relative;
+			border:1px solid #ebeaea;
+		}
+		
+		.jiance1{
+			width:220px;
+			height: 30px;
+			line-height: 30px;
+		}
+		.jiance1 input{
+			height: 30px;
+			width: 150px;
+			padding-right: 60px;
+			padding-left: 10px;
+		}
+		.jiance1 .zishu{
+			position: absolute;
+			z-index: 3;
+			right: 5px;
+			top: 0;
+		}
+
+		.jiance2{
+			height: 184px;
+			width:300px;
+		}
+		.jiance2 textarea{
+			width:280px;
+			height: 134px;
+			padding: 10px;
+		}
+		.jiance2 .zishu{
+			position: absolute;
+			z-index: 3;
+			bottom:10px;
+			right:10px;
+		}
+		.jiance3{
+			width:220px;
+			height: 30px;
+			line-height: 30px;
+		}
+		.jiance3 input{
+			height: 30px;
+			width: 150px;
+			padding-right: 60px;
+			padding-left: 10px;
+		}
+		.jiance3 .zishu{
+			position: absolute;
+			right: 5px;
+			top:0px;
+		}
+	</style>
+</head>
+<body>
+	<div class="content">
+		<p>统计字数</p>
+		<div class="k jiance1">	
+			<input type="text">
+			<span class="zishu">11</span>
+		</div>
+		<p>绑定之后，移除</p>
+		<div class="k jiance1">	
+			<input type="text">
+			<span class="zishu">11</span>
+		</div>
+		<p>统计字数，并限制字数为30字符</p>
+		<div class="k jiance3">
+			<input type="text">
+			<span class="zishu">33</span>
+		</div>
+		<p>绑定文本域</p>
+		<div class="k jiance2">	
+			<textarea name="" id="" cols="30" rows="10"></textarea>
+			<span class="zishu">22</span>
+		</div>
+		
+	</div>
+	<script src="countStr.js"></script>
+	<script>
+		$('.jiance1').countStr({input:'input',child:'.zishu'});
+		$('.jiance2').countStr({length:450,input:'textarea',child:'.zishu'});
+		$('.jiance3').countStr({length:30,input:'input',child:'.zishu'});
+		$('.jiance1:eq(1)').countStr('remove');
+	</script>
+</body>
+</html>
