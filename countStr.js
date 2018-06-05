@@ -6,7 +6,6 @@
 				child:'zishu',
 				input:'input'
 			}, options);
-			console.log(settings)
 			/**
 			 * [getLength 获取字符串的字节数]
 			 * @param  {[String]} str [待处理字符串]
